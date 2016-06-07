@@ -1,0 +1,25 @@
+---
+title: 'Better sample efficiency for Trust Region Policy Optimization'
+summary: ''
+difficulty: 3 # out of 3
+---
+
+<p><a href="https://arxiv.org/pdf/1502.05477v4.pdf">Trust Region Policy Optimization (TRPO)</a> is a scalable implementation of
+  second order <a href="http://www.scholarpedia.org/article/Policy_gradient_methods">policy gradient algorithm</a> that is highly effective on both continuous and discrete control problems.  One of the strengths of TRPO is that it is relatively easy to set its hyperparameters,   as a hyperparameter setting that performs well on one task tends to perform well on many other tasks.  But despite its significant advantages, the TRPO algorithm could be more data efficient.
+</p>
+
+<p>The problem is to
+modify <a href="https://gym.openai.com/evaluations/eval_W27eCzLQBy60FciaSGSJw">a
+good TRPO implementation</a> so that it would converge on all of
+Gym's <a href="https://gym.openai.com/envs#mujoco">MuJoCo
+environments</a> using 3x less experience, without a degradation in
+final average reward. Ideally, the new code should use the same
+setting of the hyperparameters for every problem. </p>
+
+<p> This will be an impressive achievement, and the result will likely
+be scientifically significant.</p>
+
+<hr>
+<h3>Notes</h3>
+
+<p>This problem is very hard, as getting an improvement of this magnitude is likely to require new ideas.</p>

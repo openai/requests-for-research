@@ -1,0 +1,35 @@
+---
+title: 'Im2Latex'
+summary: ''
+difficulty: 1 # out of 3
+---
+
+
+<p> <a href="http://arxiv.org/pdf/1409.3215v3.pdf">Sequence-to-sequence</a> <a href="http://arxiv.org/abs/1406.1078">models</a> with <a href="https://arxiv.org/abs/1409.0473">attention</a> have been enormously successful.  They made it possible for neural networks to reach
+  new levels of state of the art in <a href="http://arxiv.org/pdf/1508.04025v5.pdf">machine translation</a>, <a href="https://arxiv.org/pdf/1508.01211v2.pdf">speech recognition</a>, and <a href="https://arxiv.org/pdf/1412.7449v3.pdf">syntactic parsing</a>.  Thanks to this work, neural network   can now consume inputs of arbitrary shapes, and output sequences of variable length, without much effort on the practitioner's side.</p>
+
+
+<p>Implement an attention model that takes an image of a PDF math formula, and outputs the characters of the LaTeX source that generates the formula. </p>
+
+<hr />
+
+<h3>Getting Started</h3>
+
+<p> To get started, proceed according to the following stages: </p>
+
+  <ul>
+    <li> Download a large number papers from <a href="http://arxiv.org">arXiv</a>.  There is a <a href='http://www.cs.cornell.edu/projects/kddcup/datasets.html'>collection of 29,000 arXiv papers</a> that you could get started with.  It is likely that this set of 29,000 papers may contain several hundred thousand formulas, which is more than enough for getting started.  As the bandwidth of arXiv is <a href='https://arxiv.org/help/bulk_data'>limited</a>, it is important to be mindful of their constraints and to not write crawlers to download all the papers of arxiv. </li>
+    <li>Use a heuristic to find all the LaTeX formulas in the LaTeX source.  It can be done by looking for the text that lies between <tt>\begin{equation}</tt> and <tt>\end{equation}</tt>.  Here is a <a href='https://www.sharelatex.com/learn/Mathematical_expressions'>list</a> of some of the places where equations can appear in latex files. Additional examples can be found <a href='https://www.sharelatex.com/learn/Aligning_equations_with_amsmath'>here</a>.  It is likely that even a simple heuristic for extracting latex formulas should produce in excess of 100,000 equations;  if not, keep refining the heuristic. </li>
+    <li> Compile images of all the formulas.  To keep track of the correspondence between the latex formulas and their images, it is easiest to place exactly one formula on each page.  Then, when processing the latex file, it is easy to keep track of the pages.  Be sure to not render formulas so large that they exceed an entire page.  Also, be sure to render the formulas in several fonts.</li>
+    <li> Train a visual attention sequence-to-sequence model (as in <a href="http://arxiv.org/pdf/1502.03044.pdf">the Show, Attend, and Tell paper</a>, or perhaps a different variant of visual attention) that would take an image of a formula as input, and output the latex source of the formula, one character at a time.  A <a href='https://github.com/kelvinxu/arctic-captions'>Theano implementation</a> of the <a herf='http://arxiv.org/pdf/1502.03044.pdf'>Show, Attend, and Tell</a> paper can help you get started.  If you wish to implement your model from scratch, <a href='https://tensorflow.org'>TensorFlow</a> can be a good starting point. </li>
+    <li> It takes some effort to correctly implement a sequence-to-sequence model with attention.  To debug your model, we recommend that you start with a toy synthetic OCR problem, where the inputs are long images that are obtained by concatenating sequences of images of MNIST digits, and the labels should be a sequence of their classifications.   While this problem can be solved without an attention model, it is useful as a sanity check, to ensure that the implementation is not badly broken.</li>
+    <li>We recommend trying the <a href='https://www.tensorflow.org/versions/r0.9/api_docs/python/train.html#AdamOptimizer'>Adam optimizer</a>.</li>
+ </ul>
+
+<hr />
+
+<h3>Notes</h3>
+
+<p>A success here would be a very cool result and could be used to build a useful online tool. </p>
+
+<p> While this is a very non-trivial project, we've marked it with a one-star difficulty rating because we know it's solvable using current methods. It is still very challenging to really do it, as it requires getting several ML components together correctly. </p>

@@ -1,0 +1,12 @@
+---
+title: 'OpenAI Requests for Research'
+---
+
+{% assign items = site.requests_for_research | sort: 'difficulty' %}
+{% for request in items %}
+<h2>{{ request.title }}</h2>
+
+<div>
+  {{ request.content }}
+</div>
+{% endfor %}

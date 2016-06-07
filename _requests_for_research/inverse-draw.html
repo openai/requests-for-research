@@ -1,0 +1,62 @@
+---
+title: 'The Inverse DRAW model'
+summary: ''
+difficulty: 2 # out of 3
+---
+
+<p>Investigate an “Inverse DRAW” model. </p>
+
+<p>
+  The <a href="https://arxiv.org/abs/1502.04623">DRAW</a> model is a generative
+  model of natural images that operates by making a large number of small 
+  contributions to an additive canvas using an attention model.   The attention
+  model used by the DRAW model identifies a small area in the image and "writes" to it.
+</p>
+
+<p>
+  In the inverse DRAW model, there is a stochastic hidden variable and
+an attention model that reads from these hidden variables. The outputs
+of the attention model are provided to an LSTM that produces the
+  observation one dimension (or one group of dimensions) at a time.
+  Thus, while the DRAW model uses attention to decide where to write on the output canvas,
+  the inverse DRAW uses attention to choose the latent variable to be used
+  at a given timestep.  The Inverse DRAW model can be seen as a 
+  <a href="https://arxiv.org/pdf/1410.5401v2.pdf">Neural Turing Machine</a> generative
+  model that emits one dimension at a time, where the memory is a read-only latent variable.
+</p>
+
+
+<p> The Inverse DRAW model is an interesting concept to explore
+because the dimensionality of the hidden variable is decoupled from
+the length of the input.  In more detail, the Inverse DRAW model is
+a <a href="https://arxiv.org/pdf/1312.6114v10.pdf">variational
+autoencoder</a>, whose p-model emits the observation one dimension at
+a time, using attention to choose the appropriate latent variable for
+each visible dimension.  There is a fair bit of choice in the
+architecture of the approximate posterior. A natural choice is to use
+the same architecture for the posterior, where the observation will be
+playing the role of the latent variables.
+</p>
+
+<p> A useful property of the Inverse DRAW model is that its latent variables
+  may operate at a <i>rate</i> that is different from the observation.  This
+  is the case because each dimension of the observation gets assigned to one
+  hidden state.  If this model were to successfully be made deep, we would get
+  a hierarchy of representation, where each representation is operating at a
+  rate variable rate, which is trained to be as well-suited as possible for the
+  current dataset.  
+</p>
+
+<p>It would be interesting to apply this model to a text dataset, and to visualize
+  the latent variables, as well as the precise way in which the model assigns
+  words to latent variables.
+</p>
+<hr>
+
+<h3>Notes</h3>
+
+<p> It is a hard project as it is not clear that a models like this
+can be made to work with current techniques.  However, it makes
+success all the more impressive.</p>
+
+<p>The inverse DRAW model may have a cost function that's very difficult to optimize, so expect a struggle.</p>  

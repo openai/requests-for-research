@@ -1,0 +1,33 @@
+---
+title: Multiobjective RL
+summary: ''
+difficulty: 2 # out of 3
+---
+
+<p>In reinforcement learning, we often have several rewards that we
+care about. For example, in robotic locomotion, we want to maximize
+forward velocity but minimize joint torque and impact with the
+  ground. </p>
+
+<p> The standard practice is to use a reward function that is a
+weighted sum of these terms. However, it is often difficult to balance
+the factors to achieve satisfactory performance on all rewards.
+</p>
+
+<p><i>Filter methods</i> are algorithms from multi-objective
+optimization that seek to generate a sequence of points, so that each
+one is not strictly dominated by a previous one (see <a href="http://home.agh.edu.pl/~pba/pdfdoc/Numerical_Optimization.pdf">Nocedal &amp;
+    Wright</a>, chapter 15.4). </p>
+
+<p> Develop a filter method for RL that jointly optimizes a collection
+of reward functions, and test it on the
+Gym <a href="https://gym.openai.com/envs#mujoco">MuJoCo
+environments</a>. Most of these have summed rewards; you would need to
+inspect the code of the environments to find the individual
+components.</p>
+
+<hr>
+
+<h3>Notes</h3>
+
+<p>Filter methods have not been applied to RL much, so there is a lot of uncertainty around the difficult of the problem.</p>

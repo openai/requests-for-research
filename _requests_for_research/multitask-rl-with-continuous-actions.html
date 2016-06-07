@@ -1,0 +1,65 @@
+---
+title: 'Multitask RL with continuous actions.'
+summary: ''
+difficulty: 2 # out of 3
+---
+
+
+<p>At present, most machine learning algorithms are trained to solve one task
+  and one task only.  But we do not necessarily train models on only one task
+  at a time because we believe that it is the best approach in the long term;
+  on the contrary, while we would like to use multitask learning in as many
+  problems as possible, the multitask learning algorithms are not yet at a stage
+  where they provide a robust and a sizeable improvement across a wide range of domains.
+</p>
+
+<p> This sort of multitask learning should be particularly important in reinforcement
+  learning settings, since in the long run, experience will be very expensive
+  relative to computation and possibly supervised data.  For this reason, it is
+  worthwhile to investigate the feasibility of multitask learning using
+  the RL algorithms that have been developed so far.
+</p>
+  
+ 
+<p>Thus the goal is to train a single neural network that can simultaneously solve all
+Gym <a href="https://gym.openai.com/envs#mujoco">MuJoCo
+    environments</a>. </p>
+
+<p> At the end of learning, the trained neural network should be told
+(via an additional input) which environment it's running on, and
+achieve high cumulative reward on this task. The goal of this problem
+is to determine whether there is any benefit whatsoever to training a
+single neural network on multiple environments versus a single
+one, where we measure benefit via training speed. </p>
+
+<p> We already know that the multitask learning on Atari has been difficult
+(see the <a href="http://arxiv.org/pdf/1511.06295.pdf">relevant</a> <a href="http://arxiv.org/pdf/1511.06342.pdf">papers</a>). But will
+multitask learning work better on MuJoCo environments?  The goal is to
+find out. </p>
+
+<p> While we cannot predict the outcome of this project, but the actual work here should be
+reasonably straightforward (e.g., start with a <a href="https://arxiv.org/pdf/1502.05477v4.pdf">Trust Region Policy Gradient (TRPO)</a> <a href="https://gym.openai.com/evaluations/eval_W27eCzLQBy60FciaSGSJw">implementation</a> or
+reimplement the <a href="http://arxiv.org/pdf/1603.00748.pdf">Normalized Advantage Function (NAF)</a> model).
+
+<p>
+It is important to note that the various MuJoCo environments have
+different input dimensionalities and different output
+dimensionalities.  You can address this using a problem-specific first
+layer, followed by several problem-independent layers, and finally a
+problem-specific output layer. This way, the intermediate layers of
+the policy networks will use shared weights.</p>
+
+<p>The most interesting experiment is to train a multitask net of this kind
+on all but one MuJoCo environment, and then see if the resulting net
+can be trained more rapidly on a task that it hasn't been trained on.
+In other words, we hope that this kind of multitask learning can
+  accelerate training of new tasks.  If successful, the results
+can be significant.</p>
+
+<hr />
+
+<h3> Notes </h3>
+
+<p> It is a reasonably risky project, since there is a chance that
+this kind of transfer will be as difficult as it has been for
+Atari.</p>

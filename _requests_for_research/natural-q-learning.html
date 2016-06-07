@@ -1,0 +1,26 @@
+---
+title: 'Natural Q-learning'
+summary: ''
+difficulty: 2 # out of 3
+---
+
+<p> Implement and test a natural version of Q-learning, and compare it to regular Q-learning. </p>
+
+<p> <a href="http://www.maths.tcd.ie/~mnl/store/Amari1998a.pdf">Natural Gradient </a>is a promising idea that has been explored in a significant number <a href="http://arxiv.org/pdf/1301.3584.pdf">of</a> <a href="http://arxiv.org/pdf/1503.05671.pdf">papers</a> <a href="http://icml2010.haifa.il.ibm.com/papers/458.pdf">and</a> <a href="http://arxiv.org/pdf/1502.05477.pdf">settings</a>. Despite its appeal, modern approaches to natural gradient have not been applied to Q-learning with nonlinear function approximation.
+</p>
+
+<p>The intuition behind natural gradient is the following:  we can identify a neural network with its parameters, and use the backpropagation algorithm to slowly change the parameters to minimize the cost function.  But we can also think of a neural network as of a high-dimensional manifold in the infinite-dimensional space of all possible functions, and we can, at least conceptually, run gradient descent in function space, subject to the constraint that we stay on the neural network manifold.  This approach has the advantage that it does not depend on the specific parameterization used by the neural network;  for example, it is known that tanh units and sigmoid units are precisely equivalent in the family of neural networks that they can represent, but their gradients are different.  Thus, the choice of sigmoid versus tanh will affect the backpropagation algorithm, but it will not affect the idealized natural gradient, since natural gradient depends entirely on the neural network manifold, and we already established that the neural network manifold is unaffected by the choice of sigmoid versus tanh.  If we formalize the notion of natural gradient, we get that the natural gradient direction is obtained by inverting the regular gradient by the <a href="https://en.wikipedia.org/wiki/Fisher_information">Fisher information matrix</a>.  The result is still a challenging problem, but it can be addressed in a variety of ways, some of which are discussed in the papers linked above.  But the relevant fact about natural gradient is that its behavior is much more stable and benign in a variety of settings (for example, natural gradient is <a href="http://arxiv.org/pdf/1301.3584v7.pdf">relatively unaffected by the order of the data in the training set</a>, and is highly amenable to <a href="http://arxiv.org/pdf/1503.05671.pdf">data</a> <a href="https://arxiv.org/pdf/1410.7455v8.pdf">parallelism</a>), which suggests that natural gradient could improve the stability of the Q-learning algorithm as well.
+  </p>
+
+<p>     In this project, your goal is to figure out how to meaningfully apply natural gradient to Q-learning, and to compare the results to a good implementation of Q-learning. Thus, the first step of this project is to implement Q-learning.
+
+We recommend either staying with discrete domains (such as Atari), or continuous domains, and to use methods similar to <a href="http://arxiv.org/pdf/1603.00748.pdf">Normalized Advantage Function (NAF)</a>.  The continuous domains are easier to work with because they are of lower dimensionality and are therefore simpler, but NAF can be harder to implement than standard Q-learning. </p>
+
+<p> It would be especially interesting if Natural Q-learning were
+capable of solving the RAM-Atari tasks. </p>
+
+<hr />
+
+<h3>Notes</h3>
+
+<p> This project isn't guaranteed to be solvable: it could be that Q-learning's occasional inpstability and failure has little to do with whether it is natural or not. </p>

@@ -1,0 +1,46 @@
+---
+title: 'Improved Q-learning with continuous actions'
+summary: ''
+difficulty: 2 # out of 3
+---
+
+<p>
+  <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.466.7149&rep=rep1&type=pdf">Q-learning</a>
+  is one of the oldest and general reinforcement learning (RL)
+  algorithms.  It works by estimating the long term future expected
+  return for each state-action pair.  Essentially, the goal of the Q-learning
+  algorithm is fold the long term outcome of each state-action pair
+  into a single scalar that tells us how good the state-action pair
+  combination is; then, we could maximize our reward by picking the
+  action with the greatest value of the Q-function.  The Q-learning
+  algorithm has been the basis of
+  the <a href="http://www.nature.com/nature/journal/v518/n7540/full/nature14236.html">DQN</a>
+  algorithm that demonstrated that the combination of RL
+  and deep learning is a fruitful one.
+</p>
+
+<p>Your goal is to create a robust Q-learning implementation that can solve
+  all <a href="https://gym.openai.com">Gym</a> environments with
+  continuous action spaces without changing hyperparameters. </p>
+
+<p> You may want to use
+  the <a href="http://arxiv.org/pdf/1603.00748.pdf">Normalized Advantage
+  Function (NAF)</a> model as a starting point.  It is especially
+  interesting to experiment with variants of the NAF model: for
+  example, try it with a diagonal covariance. It can be also interesting to explore
+  an advantage function that uses the maximum of several quadratics,
+  which is a convenient function because their argmax is easy to
+  compute.
+</p>
+
+
+<hr>
+
+<h3>Notes</h3>
+<p>
+  This project is mainly concerned with reimplementing an existing
+  algorithm. However, there is significant value in obtaining a very
+  robust implementation, and there is a decent chance that new ideas
+  will end up being required to get it working reliably, across
+  multiple tasks.
+</p>

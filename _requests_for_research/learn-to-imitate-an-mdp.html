@@ -1,0 +1,66 @@
+---
+title: "Learn to imitate an MDP"
+summary: ''
+difficulty: 1 # out of 5
+---
+
+
+<p>
+  A Markov Decision Process (MDP) is an abstract formalization of a
+  control problem.  An MDP comes with a set of states, actions, a
+  reward function, and a transition distribution that defines the
+  environment.  We usually wish to <i>solve</i> the MDP by finding a
+  policy that maps the states (or a function of the states) to actions
+  that achieves high average reward.  The MDP formalism is extremely
+  general, and it encompasses almost any task where an agent is
+  interacting with an environment in order to achieve some goal.
+  See John Schulman's <a href='http://rll.berkeley.edu/deeprlcourse/'>course</a>,
+  David Silver's <a href="http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html">course</a>,
+  and Andrej Karpathy's <a href='http://karpathy.github.io/2016/05/31/rl/'>blog post</a>
+  for more details.
+</p>  
+
+<p>
+  The goal of this task is to train a neural network to imitate
+  an MDP.  By completing this task, you will gain experience interacting with <a href="https://gym.openai.com/envs">Gym
+  environments</a>, running existing code that trains Gym agents, and training neural networks. </p>
+
+<p> Specifically, for each environment whose state and action
+  dimensionality is not high (we consider low-dimensional environments
+  to keep the duration of the experiments manageable), such as the
+  Gym <a href="https://gym.openai.com/envs#mujoco">MuJoCo
+    environments</a>, train a neural network to imitate its transition distribution. </p>
+
+<P> In any MDP, the state-action distribution is dependent on the policy that chooses the actions. For
+  this exercise, let the actions be chosen by a neural network policy that is obtained by
+  running <a href="https://gym.openai.com/evaluations/eval_W27eCzLQBy60FciaSGSJw">a
+  good implementation</a>
+  of <a href="https://arxiv.org/pdf/1502.05477v4.pdf">Trust Region
+  Policy Optimization (TRPO)</a>.  Train the neural network by
+  minimizing the squared error, and get to a point where the average test
+  squared error of the model is very low.
+  
+</p>
+	
+<hr />
+
+<h3>Getting Started</h3>
+
+<p> To get started, you should perform the following steps: </p>
+
+<ul>
+  <li>Install <a href='https://gym.openai.com/docs'>OpenAI Gym</a>, <a href=https://tensorflow.org>TensorFlow</a>, and <a href='https://gist.github.com/joschu/e42a050b1eb5cfbb1fdc667c3450467a'>a good implementation of TRPO</a>.  </li>
+  <li>Pick a simple MuJoCo environment from Gym (for example, <a href='https://gym.openai.com/envs/Hopper-v1'>Hopper</a>), run TRPO for a large number of iterations, and collect a large set of <code>(state, action, state)</code> transitions. Randomly split it into a training, validation, and test sets.</li>
+  <li>Implement a <a href='https://www.tensorflow.org/versions/master/tutorials/mnist/beginners/index.html'>simple MLP</a>, but use the squared error instead of the cross-entropy loss.  </li>
+  <li>Train the model with the <a href='https://www.tensorflow.org/versions/master/api_docs/python/train.html#AdamOptimizer'>Adam optimizer</a>, and plot the train and validation errors as training progresses.</li>
+  <li>After sufficient tinkering, the validation error should become very low.  At this point, you should compute the test error, which will be the final measure of your performance.</li>
+</ul>
+
+
+
+<hr />
+
+<h3>Notes</h3>
+
+<p>This problem is a good starting point for a beginner and should be
+considered a warmup.</p>

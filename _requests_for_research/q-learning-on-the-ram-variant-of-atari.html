@@ -1,0 +1,18 @@
+---
+title: 'Q-learning on the RAM variant of Atari'
+summary: ''
+difficulty: 2 # out of 3
+---
+
+<p>The Q-learning algorithm had <a href="https://www.cs.toronto.edu/~vmnih/docs/dqn.pdf">a lot</a> <a href="http://www.nature.com/nature/journal/v518/n7540/full/nature14236.html">of success</a> on learning to play Atari games when the inputs
+  to the model are pixels.  Atari games are designed to run on a computer that has a very small amount of RAM, so it can be interesting to try to learn to play Atari games when the input to the neural network is the RAM state of the Atari emulator.  Surprisingly, getting Q-learning to work well when the inputs are RAM states has been unexpectedly challenging.</p>
+
+<p>Thus, your goal is to develop a Q-learning implementation that can solve many Atari games when the input to the neural network is the RAM state, using the same setting of hyperparameters on all tasks. In your experiments, use the Gym <a href="https://gym.openai.com/envs#atari">Atari</a> environments that are presented in the <a href="https://gym.openai.com/envs/Breakout-v0">RAM-way</a>, where the inputs are the complete RAM state of the Atari computer.   </p>
+
+<p> The hope here is that in order to succeed, you'd need to invent techniques for Q-learning that are generally applicable, which will be useful.  </p>
+
+<hr />
+
+<h3>Notes</h3>
+
+<p>This project might not be solvable. It would be surprising if it were to turn out that Q-learning would never succeed on the RAM variants of Atari, but there is some chance that it will turn out to be challenging.</p>
