@@ -21,12 +21,11 @@ difficulty: 2 # out of 3
 </p>
   
  
-<p>Thus the goal is to train a single neural network that can simultaneously solve all
-Gym <a href="https://gym.openai.com/envs#mujoco">MuJoCo
-    environments</a>. </p>
+<p>Thus the goal is to train a single neural network that can simultaneously solve a collection of <a href="https://gym.openai.com/envs#mujoco">MuJoCo
+    environments</a> in Gym. The current enviroments are dissimilar enough that it is unlikely that information can be shared between them. Therefore, your job is to create a set of similar environments that will serve as a good testbed for multi-task learning. Some possibilities include (1) bipedally walking with different limb dimensions and masses, (2) reaching with <a href="http://papers.nips.cc/paper/2785-learning-to-control-an-octopus-arm-with-gaussian-process-temporal-difference-methods.pdf">octopus arms</a> that have different numbers of links, (3) using the same robot model for walking, jumping, and standing.</p>
 
 <p> At the end of learning, the trained neural network should be told
-(via an additional input) which environment it's running on, and
+(via an additional input) which task it's running on, and
 achieve high cumulative reward on this task. The goal of this problem
 is to determine whether there is any benefit whatsoever to training a
 single neural network on multiple environments versus a single
@@ -36,18 +35,6 @@ one, where we measure benefit via training speed. </p>
 (see the <a href="http://arxiv.org/pdf/1511.06295.pdf">relevant</a> <a href="http://arxiv.org/pdf/1511.06342.pdf">papers</a>). But will
 multitask learning work better on MuJoCo environments?  The goal is to
 find out. </p>
-
-<p> While we cannot predict the outcome of this project, but the actual work here should be
-reasonably straightforward (e.g., start with a <a href="https://arxiv.org/pdf/1502.05477v4.pdf">Trust Region Policy Gradient (TRPO)</a> <a href="https://gym.openai.com/evaluations/eval_W27eCzLQBy60FciaSGSJw">implementation</a> or
-reimplement the <a href="http://arxiv.org/pdf/1603.00748.pdf">Normalized Advantage Function (NAF)</a> model).
-
-<p>
-It is important to note that the various MuJoCo environments have
-different input dimensionalities and different output
-dimensionalities.  You can address this using a problem-specific first
-layer, followed by several problem-independent layers, and finally a
-problem-specific output layer. This way, the intermediate layers of
-the policy networks will use shared weights.</p>
 
 <p>The most interesting experiment is to train a multitask net of this kind
 on all but one MuJoCo environment, and then see if the resulting net
