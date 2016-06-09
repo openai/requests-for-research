@@ -1,6 +1,6 @@
 ---
 title: 'Paper2Code'
-summary: 'Given CS/ML paper describing a model, generate the model's source code. Somewhat insane, but high impact.'
+summary: 'Given CS/ML paper describing a model, generate the model's source code. Somewhat insane, but impactful/solvable.'
 difficulty: 3 # out of 3
 ---
 
