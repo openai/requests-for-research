@@ -1,0 +1,56 @@
+---
+title: FunnyBot
+summary: ''
+difficulty: 2 # out of 3
+---
+
+<p>Create a deep neural network capable of generating funny jokes. 
+</p>
+
+<p>1. Create a dataset of pairs of jokes / anecdotes in raw text form and 
+corresponding scores assigned by web scraping https://www.reddit.com/r/jokes 
+and similar sites. Normalize the scores such that they are consistent among
+ different websites. 
+</p>
+
+<p>2. Train a neural network which given a raw text of the joke estimates 
+the score that this joke will get when posted on one of the sites that 
+were web scrambled. To do so, existing approaches for sentiment analysis 
+could be applied, for example like [in this example](https://github.com/fchollet/keras/blob/master/examples/imdb_cnn_lstm.py). 
+</p>
+
+<p>3. Train another neural network to generate text of fixed size which 
+is funny according to 'critic' network, that is, which maximizes the outputs 
+of the network created in previous step. Make sure that the trained 'comedian' 
+network does not just produce some [adversarial noise](http://www.kdnuggets.com/2015/07/deep-learning-adversarial-examples-misconceptions.html). To ensure this, some 
+smart constraints on outputs of 'comedian' network might be required. 
+</p>
+
+<p>4. Create a setup in which the 'comedian' neural network is able to
+post the jokes somewhere online where it can get reliable score feedback
+for the jokes it generates, for example create a dedicated website or a social
+network account. Use RL to improve the quality of jokes as much as possible
+ of a 'comedian' neural network using the score feedback.
+</p>
+
+<p>5. Enjoy the rest of eternity with endless jokes from the comedian 
+neural network you have trained. 
+</p>
+
+<p>There are a few challenges: firstly, a 'comedian' neural network neets to have some source of stochastisity
+internally, such that it can make random sampling from manifold of jokes 
+which are funny. This can be approached using [stochastic neural networks](http://www.cs.toronto.edu/~tang/papers/sfnn.pdf).
+Alternatively, optimization of the inputs to the 'critic' network with random
+initialization can be used instead of 'comedian' network. 
+However, it seems likely that latter will lead to noisy
+[adversarial input](http://www.kdnuggets.com/2015/07/deep-learning-adversarial-examples-misconceptions.html)
+if no smart constraints on the text input optimized are imposed.
+</p>
+
+<p>Secondly, a 'comedian' agent needs to be able to keep track
+of previous jokes it made - repeating same joke many times makes everyone hate you.
+</p>
+
+<p>Training such neural networks potentially can allow to gain more insights
+into the nature of humor, and hopefully give life to some good jokes.
+</p>
