@@ -4,12 +4,16 @@ summary: ''
 difficulty: 3 # out of 3
 ---
 
-<p>Many sequence prediction tasks involve uncertainty. Even the sequence <code>abababab...</code> may not repeat the same pattern forever. However, some sequences - algorithmic tasks - should generalize for an unbounded amount of time.</p>
+<p>Many sequence prediction tasks involve uncertainty. Even the sequence <code>abababab...</code> may not repeat the same pattern forever. However, some sequences - algorithmic tasks - should generalize for an unbounded amount of time. Examples of simple algorithmic tasks to start with are <a href="https://gym.openai.com/envs/RepeatCopy-v0">RepeatCopy</a> and <a href="https://gym.openai.com/envs/ReversedAddition-v0">ReversedAddition</a>.</p>
 
-<p>The goal is to develop models that can learn algorithms, such as the <a href="http://www-personal.umich.edu/~reedscot/iclr_project.html">Neural Programmer-Interpreter</a>, and successfully apply the learned algorithms over sequences much longer than those used to train the model. One example would be to learn and apply a sorting algorithm over an array with hundreds of elements.</p>
+<p>The goal is to develop models that can learn algorithms, such as the <a href="http://www-personal.umich.edu/~reedscot/iclr_project.html">Neural Programmer-Interpreter</a> (NPI), and successfully apply the learned algorithms over sequences much longer than those used to train the model. For example, if the model were trained on pairs of numbers of length up to 10 on the ReversedAddition task, it should be add pairs of numbers that are 100 digits long, or even 1000 digits long. One quantitative success criterion is therefore to be able to generalize to sequences 1, and potentially 2, orders of magnitude greater than the sequences used for training.</p>
+
+<p>Progressing from learning to perform bubble sort (as achieved by the NPI), more difficult algorithms to learn would be more complex sorting algorithms, such as quicksort. Whilst bubble sort mainly consists of local comparisons, quicksort involves comparisons across the length of the sequence as well as multiple levels of recursion.</p>
 
 <hr />
 
 <h3>Notes</h3>
 
 <p>If this project can be considered solved simply by using more training data, then a further challenge would be to minimise the amount of training data needed to perform "infinite generalization".</p>
+
+<p>The compositionality or "subroutines" exhibited in algorithms has links to hierarchical reinforcement learning, where the reinforcement learning task can be subdivided into a series of smaller problems. Both identifying subtasks and learning when to execute subtask policies is an ongoing area of research.</p>
