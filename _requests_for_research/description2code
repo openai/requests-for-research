@@ -1,6 +1,6 @@
 ---
 title: 'Description2Code'
-summary: 'Given some text describing a short program, generate the program's source code.'
+summary: 'Given some brief text describing a short program, generate the program's source code.'
 difficulty: 3 # out of 3
 ---
 
@@ -8,7 +8,7 @@ difficulty: 3 # out of 3
 <p> <a href="http://arxiv.org/pdf/1603.06744.pdf">Code Generators</a> conditioned on various input types have yielded promising results. Recent work has shown that neural networks (that combine multiple predictors) are capable of learning to output executable code when given a textual (and/or visual?) description of a model's functional specification. </p>
 
 
-<p> Implement a model that takes in a small image (or maybe text/latex/pdf) describing a short program and outputs the characters of an executable code that satisfies the functional specifications in the description. </p>
+<p> Implement a model that takes in a small image (or text/latex/pdf) describing a short program and outputs the characters of an executable code that satisfies the functional specifications in the description. </p>
 
 <hr />
 
