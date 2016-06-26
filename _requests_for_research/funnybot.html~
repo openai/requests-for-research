@@ -15,12 +15,8 @@ corresponding scores assigned to these jokes. Existing datasets:
 Pun of the Day dataset: ~2500 puns; 16000 One Liners dataset: ~16000 
 one line jokes; See 
 [Yang, Diyi, et al. "Humor recognition and humor anchor extraction."](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.696.1901&rep=rep1&type=pdf)
-[Jester datasets](http://eigentaste.berkeley.edu/dataset/) : contains around 150 jokes and ratings from large number of users for these jokes.
 </p>
 <p> 
-Pun of the Day dataset: ~2500 puns; 16000 One Liners dataset: ~16000 
-one line jokes; See 
-[Yang, Diyi, et al. "Humor recognition and humor anchor extraction."](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.696.1901&rep=rep1&type=pdf)
 [Jester datasets](http://eigentaste.berkeley.edu/dataset/) : contains around 150 jokes and ratings from large number of users for these jokes.
 </p>
 <p>
@@ -53,7 +49,7 @@ into the nature of humor, and hopefully give life to some good jokes.
 [etrovic, Sasa, and David Matthews. "Unsupervised joke generation from big data." ACL (2). 2013.](http://homepages.inf.ed.ac.uk/s0894589/petrovic13unsupervised.pdf)
 </p>
 
-<p>The next step after this research request is solved is to create a 
+<p>Potential follow up after this research request is solved is to create a 
 setup in which created neural network is able to
 post the jokes somewhere online where it can get reliable score feedback
 for the jokes it generates and improve itself accordingly using RL.
