@@ -24,7 +24,7 @@ one line jokes; See
 150 jokes and ratings from a large number of users.
 </p>
 <p>
-Train a [language model](https://arxiv.org/abs/1602.02410) 
+Train a large [language model](https://arxiv.org/abs/1602.02410) 
 on jokes datasets, similarily as [in this post](http://karpathy.github.io/2015/05/21/rnn-effectiveness/).
 See if models trained on above datasets produce reasonable results.
 </p>
