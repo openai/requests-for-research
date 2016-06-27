@@ -1,10 +1,11 @@
 ---
-title: FunnyBot
+title: Comedian language model
 summary: ''
 difficulty: 2 # out of 3
 ---
 
-<p>Train a language model capable of generating funny jokes.
+<p>Train a language model capable of generating jokes from one of 
+predefined categories.
 This request can be solved in the following steps:
 </p>
 
@@ -49,7 +50,7 @@ One of the outcomes of this research request is to determine whether pretraining
 helps with joke generation.
 </p>
 <p>
-People are all different, and so are their tastes in jokes, therefore some
+People are all different, and so are their tastes in jokes, thus some
 might prefer a certain category of jokes over others. Modify the language
 model obtained in previous steps such that it can be configured to generate
 jokes from a certain category only. To do so, train language model using jokes 
@@ -60,9 +61,9 @@ For the other datasets, the jokes can be labeled using a text classifier
 trained to detect the reddit label from the joke text.  
 </p>
 <p>
-Expected outcome of this research request is to determine whether a language model
-described in previous paragraph can be built with current language modelling 
-approaches.
+Expected outcome of this research request is to determine whether a reasonable 
+language model described in the previous paragraph can be built with current language 
+modelling approaches.
 </p>
 
 <p>Related literature:
