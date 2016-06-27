@@ -5,7 +5,7 @@ difficulty: 2 # out of 3
 ---
 
 <p>Train a language model capable of generating funny jokes.
-This request can be solved in following two steps.
+This request can be solved in the following steps:
 </p>
 
 <p> 
@@ -23,20 +23,20 @@ one line jokes; See
 150 jokes and ratings from large number of users for these jokes.
 </p>
 <p>
-However, most likely to obtainin a reasonable language model more
-data is required then what is available in listed datasets. 
+Train a large [language model](https://arxiv.org/abs/1602.02410) 
+on jokes datasets, similarily as [in this post](http://karpathy.github.io/2015/05/21/rnn-effectiveness/).
+See if the model trained on above datasets produces reasonable results.
+</p>
+<p>
+Most likely to obtainin a reasonable language model more
+data is required then what is available in above datasets. 
 Obtain such additional data by web scraping sites like 
 https://www.reddit.com/r/jokes, 
 http://funtweets.com/, 
 http://funnytweeter.com/ 
 and similar sites. 
 Please make sure to obey the website policies with respect to the web scraping!
-</p>
-<p>
-Secondly, train large [language model](https://arxiv.org/abs/1602.02410) 
-on the jokes datasets, similarily as [in this post](http://karpathy.github.io/2015/05/21/rnn-effectiveness/).
-Determine if the training setup is sufficient to generate funny jokes or
-if the setup needs to be modified.
+For reddit comments in general, you can use [this torrent](https://www.reddit.com/r/datasets/comments/3bxlg7/i_have_every_publicly_available_reddit_comment/).
 </p>
 <p>
 To further increase the amount of text that language model was trained on,
@@ -48,12 +48,21 @@ English language; Fine tune such pretrained model on the jokes corpus.
 One of the outcomes of this research request is to determine whether pretraining
 helps with joke generation.
 </p>
-
-
-
-
-<p>Training such neural networks potentially allows to gain more insights
-into the nature of humor, and hopefully give life to some good jokes.
+<p>
+People are all different, and so are their tastes in jokes, therefore some
+might prefer a certain category of jokes over others. Modify the language
+model obtained in previous steps such that it can be configured to generate
+jokes from a certain category only. To do so, train language model using jokes 
+from https://www.reddit.com/r/jokes on both joke text and one hot encoded 
+label of joke, such that language model can be configured to generate jokes
+only of certain type by fixing the corresponding input value encoding label.
+For the other datasets, the jokes can be labeled using a text classifier
+trained to detect the reddit label from the joke text.  
+</p>
+<p>
+Expected outcome of this research request is to determine whether a language model
+described in previous paragraph can be built with current language modelling 
+approaches.
 </p>
 
 <p>Related literature:
