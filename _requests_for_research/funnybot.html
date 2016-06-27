@@ -4,12 +4,14 @@ summary: ''
 difficulty: 2 # out of 3
 ---
 
-<p>Create a deep neural network capable of generating funny jokes. 
+<p>Train a language model capable of generating funny jokes.
+This request can be solved in following two steps.
 </p>
 
 <p> 
-1. Obtain a dataset of pairs of jokes / anecdotes in raw text form and 
-corresponding scores assigned to these jokes. Existing datasets:
+Firstly, obtain a large corpus of jokes in raw text format, that will 
+later be used to train language model. For initial tests you can use 
+the following existing datasets:
 </p>
 <p> 
 Pun of the Day dataset: ~2500 puns; 16000 One Liners dataset: ~16000 
@@ -17,25 +19,33 @@ one line jokes; See
 [Yang, Diyi, et al. "Humor recognition and humor anchor extraction."](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.696.1901&rep=rep1&type=pdf)
 </p>
 <p> 
-[Jester datasets](http://eigentaste.berkeley.edu/dataset/) : contains around 150 jokes and ratings from large number of users for these jokes.
+[Jester datasets](http://eigentaste.berkeley.edu/dataset/) : contains around 
+150 jokes and ratings from large number of users for these jokes.
 </p>
 <p>
-Additional data can be obtained
- by web scraping sites like 
+However, most likely to obtainin a reasonable language model more
+data is required then what is available in listed datasets. 
+Obtain such additional data by web scraping sites like 
 https://www.reddit.com/r/jokes, 
 http://funtweets.com/, 
 http://funnytweeter.com/ 
 and similar sites. 
-Please make 
-sure to obey the website policies with respect to the web scraping!
+Please make sure to obey the website policies with respect to the web scraping!
+</p>
+<p>
+To further increase the amount of text that language model was trained on,
+pretrain a language model on large corpus of regular text, for example
+on [One Billion Words dataset](http://arxiv.org/abs/1312.3005), which you can 
+download [here](http://www.statmt.org/lm-benchmark/). This way the language
+model will already be initialized with knowledge of general structures in 
+English language; Fine tune such pretrained model on the jokes corpus. 
+One of the outcomes of this research request is to determine whether pretraining
+helps with joke generation.
 </p>
 
-<p>
-Ideally you would combine data from multiple sources to increase overall training set.
-</p>
 
 <p>
-2. Train the biggest baddest [language model](https://arxiv.org/abs/1602.02410) 
+Secondly, train large [language model](https://arxiv.org/abs/1602.02410) 
 on the jokes datasets, similarily as [in this post](http://karpathy.github.io/2015/05/21/rnn-effectiveness/).
 Determine if the training setup is sufficient to generate funny jokes or
 if the setup needs to be modified.
