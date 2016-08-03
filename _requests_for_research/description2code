@@ -1,0 +1,34 @@
+---
+title: 'Description2Code'
+summary: 'Given some brief text describing a short program, generate the program's source code.'
+difficulty: 3 # out of 3
+---
+
+
+<p> <a href="http://arxiv.org/pdf/1603.06744.pdf">Code Generators</a> conditioned on various input types have yielded promising results. Recent work has shown that neural networks (that combine multiple predictors) are capable of learning to output executable code when given a textual (and/or visual?) description of a model's functional specification. </p>
+
+
+<p> Implement a model that takes in a small image (or text/latex/pdf) describing a short program and outputs the characters of an executable code that satisfies the functional specifications in the description. </p>
+
+<hr />
+
+<h3>Getting Started</h3>
+
+<p> To get started, proceed according to the following stages: </p>
+
+  <ul>
+    <li> Download a large number of short description-code pairs from (dataset in progress) for the purpose of training/testing. Try to use pairs that have the code written in the same language for all the pairs (the language should be one that is adopted by a substantial portion of the community). It would be convenient if someone (such as maybe <a href="https://triplebyte.com/">Triplebyte</a>) also created an easily downloadable dataset of description-code pairs arranged in order of increasing complexity so that a curriculum learning schedule could be used. </li>
+    <li> Apply a sequence to sequence model with attention on this input-output example set to get a baseline; during the testing phase, use the Sample Input and Sample Output from the descriptions to verify whether or not the code that the model generates is correct. Next, start experimenting with architecture designs.</li>
+    <li> Might need need a reasoning component such as <a href="https://arxiv.org/pdf/1603.01417.pdf">(Dynamic?) Memory Networks </a> (or <a href="http://arxiv.org/pdf/1606.02270.pdf">EpiReader </a> in the case of scaling to longer description) to reason about meaning of and iteratively attend to memories of text/images within the description. A <a href='https://github.com/ethancaballero/Improved-Dynamic-Memory-Networks-DMN-plus'>Theano implementation</a> of the <a href="https://arxiv.org/pdf/1603.01417.pdf">Dynamic Memory Networks for textual and visual qa</a> paper can help you get started. </li>
+    <li> Might need an interface-interaction component such as <a href="http://arxiv.org/pdf/1505.00521.pdf">Reinforcement Learning Neural Turing Machines</a> to interact with external interface such as google's search engine in order to look up relevant concepts that are referenced but not explained in the description. </li>
+    <li> Might need a compositional component such as <a href="https://arxiv.org/pdf/1511.06279.pdf">Neural Programmer-Interpreter</a> or <a href="http://arxiv.org/pdf/1511.04834.pdf">Neural Programmer</a> to learn to compose higher-level programs from simpler sub-programs/operations. </li>
+    <li> Might need a generative component such as <a href="http://arxiv.org/pdf/1603.06744.pdf">Latent Predictor Networks for Code Generation</a> to generate code. Employing symbol compression techniques and multiple predictors (such as char-level generators and keyword copiers) as described in Latent Predictor Network paper will probably make this step more feasible/scalable. </li>
+ </ul>
+
+<hr />
+
+<h3>Notes</h3>
+
+<p> Success could automate the implementation of simple programming tasks and increase the interpretability of machine learning models.</p>
+
+<p> This project is non-trivial (three-star difficulty) in that it requires some current methods to be improved/combined.</p>
