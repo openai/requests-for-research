@@ -32,3 +32,7 @@ difficulty: 1 # out of 3
 <p>A success here would be a very cool result and could be used to build a useful online tool. </p>
 
 <p> While this is a very non-trivial project, we've marked it with a one-star difficulty rating because we know it's solvable using current methods. It is still very challenging to really do it, as it requires getting several ML components together correctly. </p>
+
+<h3>Solutions</h3>
+
+<p> Results, data set, code, and a write-up are available at <a href="http://lstm.seas.harvard.edu/latex/">http://lstm.seas.harvard.edu/latex/</a>. The model is trained on the above data sets and uses an extension of the Show, Attend and Tell paper combined with a multi-row LSTM encoder. Code is written in Torch (based on the <a href="https://github.com/harvardnlp/seq2seq-attn">seq2seq-attn</a> system), and the model is optimized using SGD. Additional experiments are run using the model to generate HTML from small webpages. 
