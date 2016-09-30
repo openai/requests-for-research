@@ -5,8 +5,8 @@ difficulty: 2 # out of 3
 ---
 
 <p>
-  As it is always desirable to train larger models on harder domains, one important area of research is parallelization.  Parallelization 
-has played an <a href="http://papers.nips.cc/paper/4687-large-scale-distributed-deep-networks.pdf">important role</a> in deep learning, and has been <a href="https://arxiv.org/pdf/1507.04296.pdf">especially</a> <a href="https://arxiv.org/pdf/1602.01783.pdf">successful</a> in reinforcement learning.  The successful development of algorithms that parallelize well will make it possible to train larger models faster, which will advance the field.  
+  As it is always desirable to train larger models on harder domains, one important area of research is parallelization.  Parallelization
+has played an <a href="http://papers.nips.cc/paper/4687-large-scale-distributed-deep-networks.pdf">important role</a> in deep learning, and has been <a href="https://arxiv.org/pdf/1507.04296.pdf">especially</a> <a href="https://arxiv.org/pdf/1602.01783.pdf">successful</a> in reinforcement learning.  The successful development of algorithms that parallelize well will make it possible to train larger models faster, which will advance the field.
 </p>
 
 <p>
@@ -16,7 +16,7 @@ time than <a href="https://gym.openai.com/evaluations/eval_W27eCzLQBy60FciaSGSJw
 
 <p> You may worry that in order to solve this problem, you would need access to a large number of computers.  However, it is not so, as it is straightforward to simulate a set of parallel computers using a single core.</a>
 
-<p> Make sure your code remains generic and readable.  
+<p> Make sure your code remains generic and readable.
 </p>
 
 
@@ -26,3 +26,7 @@ time than <a href="https://gym.openai.com/evaluations/eval_W27eCzLQBy60FciaSGSJw
 <h3>Notes</h3>
 
 <p>It is known that RL algorithms can be parallelized well, so we expect it to be possible to improve upon the basic implementation.  What is less obvious is whether it is possible to get 15x speedup using, say, only 20x more nodes.</p>
+
+<h3>Solutions</h3>
+
+<p> Preliminary paper describing TRPO with parallel actors <a href="http://kvfrans.com/static/trpo.pdf"> here </a>, with the implementation avaiable <a href="https://github.com/kvfrans/parallel-trpo"> at this repo. Current results are a 3x speedup with when using 4 cores.</a>
