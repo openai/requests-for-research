@@ -1,0 +1,15 @@
+---
+title: 'Doc2Code'
+summary: "Given a docstring, generate the source code of a program that satisfies program description in the docstring. Or alternatively, given source code, generate doctrings that describe the function of the source code. If you're feeling extra ambitious, acquire/generate test cases for each triplet and then generate programs that satisfy test cases as well."
+difficulty: 3 # out of 3
+---
+
+
+<p> The (extremely) ambitious goal of this request is to solve the problem
+  of generating code from docstrings, or to alternatively solve the problem of generating doctrings from code.  
+  It is outside the reach of current machine learning algorithms.
+  However, <a href="https://github.com/Avmb">Antonio Valerio Miceli Barone</a>
+  has collected <a href="https://github.com/EdinburghNLP/code-docstring-corpus">150,370 triples of function declarations,
+  docstrings and bodies</a>.  Refer to the paper https://arxiv.org/abs/1707.02275 for a baseline and an explanation behind
+  the motivation of the dataset. If you're feeling extra ambitious, first figure out a way to acquire/generate test cases 
+  for each of the triplets, and then use those test cases to verify that the generated code is functionally correct. </p>
