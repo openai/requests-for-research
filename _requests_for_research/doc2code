@@ -1,6 +1,6 @@
 ---
 title: 'Doc2Code'
-summary: "Given a docstring, generate the source code of a program that satisfies program description in the docstring. Or alternatively, given source code, generate doctrings that describe the function of the source code. If you're feeling extra ambitious, acquire/generate test cases for each triplet and then generate programs that satisfy test cases as well."
+summary: "Given a docstring, generate the source code of a program that satisfies program description in the docstring. Or alternatively, given source code, generate docstrings that describe the function of the source code. If you're feeling extra ambitious, acquire/generate test cases for each triplet and then generate programs that satisfy test cases as well."
 difficulty: 3 # out of 3
 ---
 
