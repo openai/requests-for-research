@@ -6,7 +6,7 @@ difficulty: 3 # out of 3
 
 
 <p> The (extremely) ambitious goal of this request is to solve the problem
-  of generating code from docstrings, or to alternatively solve the problem of generating doctrings from code.  
+  of generating code from docstrings, or to alternatively solve the problem of generating docstrings from code.  
   It is outside the reach of current machine learning algorithms.
   However, <a href="https://github.com/Avmb">Antonio Valerio Miceli Barone</a>
   has collected <a href="https://github.com/EdinburghNLP/code-docstring-corpus">150,370 triples of function declarations,
