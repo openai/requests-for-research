@@ -10,6 +10,8 @@ problems to help new people enter the field, and for enthusiastic
 practitioners to hone their skills. Many will require inventing new
 ideas.
 
+Also check out our new list: [Requests for Research 2.0](https://blog.openai.com/requests-for-research-2/)
+
 ## If you've solved a problem
 
 Please write up the problem in a Gist or paper, and open a pull
