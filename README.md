@@ -1,3 +1,5 @@
+**Status:** Archive (code is provided as-is, no updates expected)
+
 # Requests for Research
 
 It's easy to get started in deep learning, with many
