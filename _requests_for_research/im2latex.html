@@ -34,5 +34,10 @@ difficulty: 1 # out of 3
 <p> While this is a very non-trivial project, we've marked it with a one-star difficulty rating because we know it's solvable using current methods. It is still very challenging to really do it, as it requires getting several ML components together correctly. </p>
 
 <h3>Solutions</h3>
-
+<h4> Solution 1</h4>
 <p> Results, data set, code, and a write-up are available at <a href="http://lstm.seas.harvard.edu/latex/">http://lstm.seas.harvard.edu/latex/</a>. The model is trained on the above data sets and uses an extension of the Show, Attend and Tell paper combined with a multi-row LSTM encoder. Code is written in Torch (based on the <a href="https://github.com/harvardnlp/seq2seq-attn">seq2seq-attn</a> system), and the model is optimized using SGD. Additional experiments are run using the model to generate HTML from small webpages. 
+
+<h4><a href="https://untrix.github.io/i2l/">Solution 2</a></h4>
+<p>
+The <a href="https://arxiv.org/abs/1802.05415">paper is available on arXiv</a>. Datasets, visualization and ancillary material (including a hardware parts list) is available at <a href="https://untrix.github.io/i2l/">https://untrix.github.io/i2l/</a>. This model is based on the Show, Attend and Tell paper. However significant changes were needed to be made to that model in order to get to a BLEU score of 89&#37;; the highest reported so far. We detail those changes, the reasons why they were needed and their effect on performance. We also provide <a href="https://untrix.github.io/i2l/alpha_index.html">visuals </a> demonstrating that the model focuses its attention on small regions of the image and scans it left/right, up/down as it generates the corresponding LaTeX. The implementation, written from scratch in Python is available under open-source license at <a href="https://github.com/untrix/im2latex">https://github.com/untrix/im2latex</a>. The model was implemented using Tensorflow and pre/post processing is presented via. Jupyter Notebooks.
+</p>
